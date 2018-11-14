@@ -29,7 +29,8 @@ Our approach to identify the genre of a music track relies on the use of a Convo
 Since we did not have a computer with a GPU, the model has been trained on [Google Colab](https://colab.research.google.com/) – in order to take advantage of a free GPU acceleration.
 
 ## Results
-For the time being, our model can achieve **41% accuracy** on the validation dataset. This is an unquestionable progress when compared to the dummy classifier's performance (12.5%), but there is still a bit of room for improvement.
-- The lack of available RAM on Google Colab (the notebook automatically crashes when the RAM used is higher than 12 GB) and the restriction on GPU usage makes it difficult to train the neural network on a big dataset,
-- For this reason, we only managed to train the model on 1,000 of the 8,000 songs, both because the original dataset was too inconvenient to manipulate and because the neural network becomes very slow to train,
--  A potential improvement might be to check the performance of a neural network that has been pre-trained on a big image database, such as ImageNet.
+For the time being, our model can achieve an accuracy of **43.7%** on the test dataset when considering single 3-second windows, and an accuracy of **49.8%** when trying to predict the genre of the full track, which is obviously an unquestionable progress when compared to the dummy classifier's performance (12.5%). However, it still falls short of our expectations, given the performance of the state of the art.
+
+Potential improvements on our results might come from two sources:
+- Either try to use a neural network that was already pre-trained on a big image database, such as ImageNet,
+- Or try to use a more complex neural network structure (not really feasible in this case, since we would likely need a lot more resources to train it).
